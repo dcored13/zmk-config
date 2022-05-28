@@ -1,15 +1,7 @@
-/*
- * Copyright (c) 2020 The ZMK Contributors
- *
- * SPDX-License-Identifier: MIT
- */
-
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
-#include <dt-bindings/zmk/ext_power.h>
 #include <dt-bindings/zmk/outputs.h>
-
 / {
 	keymap {
 		compatible = "zmk,keymap";
@@ -21,9 +13,7 @@
 &kp LSHFT &kp Z  &kp X  &kp C    &kp V   &kp B    &kp LBKT &kp RBKT   &kp N    &kp M    &kp COMMA &kp DOT &kp FSLH &kp EQUAL
                         &kp LALT &mo 1   &kp LGUI &kp RET  &kp SPACE  &kp BSPC &mo 1    &kp RCTRL
 			>;
-			sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
-		};
-
+ 		};
 		lower_layer {
 			bindings = <
 &trans &kp F1    &kp F2   &kp F3    &kp F4 &kp F5                     &kp F6  &kp F7 &kp F8      &kp F9   &kp F10    &trans	
@@ -32,18 +22,15 @@
 &trans &trans    &trans   &trans    &trans &trans  &mo 2       &trans &trans  &trans &kp C_PREV  &kp C_PP &kp C_NEXT &kp C_VOL_DN
                           &trans    &mo 2  &trans  &trans      &trans &trans  &mo 2  &trans
 			>;
-			sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
-		};
-
+ 		};
 		raise_layer {
 			bindings = <
-&bt BT_CLR &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4 &out OUT_BLE &out OUT_USB &kp F8 &kp F9 &kp F10 &trans
+&bt BT_CLR &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &trans &out OUT_BLE &out OUT_USB &kp F8 &kp F9 &kp F10 &trans
 &trans &kp PG_UP &kp UP   &kp PG_DN &trans &kp F11                    &kp F12 &trans &trans      &kp UP   &trans     &trans
 &trans &kp LEFT  &kp DOWN &kp RIGHT &trans &trans                     &trans  &trans &kp LEFT    &kp DOWN &kp RIGHT  &kp C_VOL_UP
 &trans &trans    &trans   &trans    &trans &trans  &trans      &trans &trans  &trans &kp C_PREV  &kp C_PP &kp C_NEXT &kp C_VOL_DN
                           &trans    &mo 2  &trans  &trans      &trans &trans  &mo 2  &trans
 			>;
-			sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
-		};
+ 		};
 	};
 };
